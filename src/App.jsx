@@ -424,9 +424,11 @@ function Main({ user }) {
                   e.target.blur();
                 }}
               >
+                {/* Native <option> popups are OS-rendered and ignore the app's
+                    text-transform CSS — uppercase the text itself. */}
                 {frames.map((f) => (
                   <option key={f.id} value={f.id}>
-                    {f.name}
+                    {f.name.toUpperCase()}
                   </option>
                 ))}
               </HiddenSelect>
